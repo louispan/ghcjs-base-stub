@@ -1,8 +1,8 @@
-name:                ghcjs-extras
+name:                javascript-extras
 version:             0.1.0.0
-synopsis:            Extra javascript functions
-description:         Extra javascript functions
-homepage:            https://github.com/louispan/ghcjs-extras#readme
+synopsis:            Extra javascript functions when using GHCJS
+description:         Extra javascript functions when using GHCJS
+homepage:            https://github.com/louispan/javascript-extras#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Louis Pan
@@ -15,7 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     JavaScript.Object.Extras
+  exposed-modules:     JavaScript.Extras
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
   ghc-options:         -Wall
@@ -24,4 +24,4 @@ library
 
 source-repository head
   type:     git
-  location: https://github.com/louispan/ghcjs-extras
+  location: https://github.com/louispan/javascript-extras
