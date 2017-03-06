@@ -1,5 +1,10 @@
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - libgmp-dev
+
 before_install:
   # stack
   - mkdir -p ~/.local/bin
