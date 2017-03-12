@@ -1,5 +1,4 @@
 {-# OPTIONS_GHC -fno-warn-orphans #-}
-{-# OPTIONS_GHC -fno-warn-unticked-promoted-constructors #-}
 {-# OPTIONS_GHC -Wno-redundant-constraints #-}
 {-# LANGUAGE EmptyDataDecls #-}
 {-# LANGUAGE DefaultSignatures #-}
@@ -36,13 +35,13 @@ data MutabilityType s = Mutable_ s
                       | Immutable_ s
                       | STMutable s
 
-type Mutable   = Mutable_ ()
-type Immutable = Immutable_ ()
+type Mutable   = 'Mutable_ ()
+type Immutable = 'Immutable_ ()
 
 data IsItMutable = IsImmutable
                  | IsMutable
 
 type family Mutability (a :: MutabilityType s) :: IsItMutable where
-  Mutability Immutable     = IsImmutable
-  Mutability Mutable       = IsMutable
-  Mutability (STMutable s) = IsMutable
+  Mutability Immutable     = 'IsImmutable
+  Mutability Mutable       = 'IsMutable
+  Mutability ('STMutable s) = 'IsMutable
