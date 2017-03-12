@@ -1,4 +1,4 @@
-name:                javascript-stub
+name:                ghcjs-base-stub
 version:             0.1.0.0
 synopsis:            Allow GHCJS projects to compile under GHC and develop using intero.
 description:         Allow GHCJS projects to compile under GHC and develop using intero.
@@ -57,4 +57,4 @@ library
 
 source-repository head
   type:     git
-  location: https://github.com/louispan/javascript-stub
+  location: https://github.com/louispan/ghcjs-base-stub
