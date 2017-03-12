@@ -1,5 +1,5 @@
 name:                ghcjs-base-stub
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Allow GHCJS projects to compile under GHC and develop using intero.
 description:         Allow GHCJS projects to compile under GHC and develop using intero.
 homepage:            https://github.com/louispan/javascript-stub#readme
@@ -27,21 +27,22 @@ library
                        Data.JSString.Internal.Search
                        Data.JSString.Text
                        GHCJS.Concurrent
-                       GHCJS.Foreign.Internal
                        GHCJS.Foreign
                        GHCJS.Foreign.Callback
                        GHCJS.Foreign.Callback.Internal
                        GHCJS.Foreign.Export
+                       GHCJS.Foreign.Internal
                        GHCJS.Marshal
                        GHCJS.Marshal.Internal
                        GHCJS.Marshal.Pure
                        GHCJS.Nullable
                        GHCJS.Prim
                        GHCJS.Types
-                       JavaScript.Object
-                       JavaScript.Object.Internal
                        JavaScript.Array
                        JavaScript.Array.Internal
+                       JavaScript.Cast
+                       JavaScript.Object
+                       JavaScript.Object.Internal
       build-depends:   aeson >= 0.11 && < 1
                      , attoparsec >= 0.13 && < 1
                      , deepseq >= 1.4 && < 2
