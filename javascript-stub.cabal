@@ -1,0 +1,52 @@
+name:                javascript-stub
+version:             0.1.0.0
+synopsis:            Allow GHCJS projects to compile under GHC and develop using intero.
+description:         Allow GHCJS projects to compile under GHC and develop using intero.
+homepage:            https://github.com/louispan/javascript-stub#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Louis Pan
+maintainer:          louis@pan.me
+copyright:           2017 Louis Pan
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  build-depends:       base >= 4.7 && < 5
+  if !impl(ghcjs)
+      other-modules:   GHCJS.Internal.Types
+                       Data.JSString.Internal.Type
+      exposed-modules: Data.JSString
+                       Data.JSString.Internal.Fusion
+                       Data.JSString.Internal.Fusion.CaseMapping
+                       Data.JSString.Internal.Fusion.Common
+                       Data.JSString.Internal.Fusion.Types
+                       Data.JSString.Internal.Search
+                       Data.JSString.Text
+                       GHCJS.Foreign.Internal
+                       GHCJS.Prim
+                       GHCJS.Types
+      build-depends:   deepseq >= 1.4 && < 2
+                     , ghc-prim
+                     , text >= 1.2 && < 2
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+-- test-suite javascript-shim-test
+--   type:                exitcode-stdio-1.0
+--   hs-source-dirs:      test
+--   main-is:             Spec.hs
+--   build-depends:       base >= 4.7 && < 5
+--                      , hspec >= 2 && < 3
+--                      , javascript-shim
+--   if impl(ghcjs)
+--     build-depends: ghcjs-base
+--   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+--   default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/louispan/javascript-stub
