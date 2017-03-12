@@ -1,3 +1,4 @@
+# This makefile is for building using GHCJS
 SHELL := /bin/bash
 
 .PHONY: all install clean build
