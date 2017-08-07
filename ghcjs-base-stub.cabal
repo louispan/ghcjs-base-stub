@@ -51,6 +51,7 @@ library
                        JavaScript.Web.Blob.Internal
                        JavaScript.Web.CloseEvent
                        JavaScript.Web.CloseEvent.Internal
+                       JavaScript.Web.Location
                        JavaScript.Web.MessageEvent
                        JavaScript.Web.MessageEvent.Internal
       build-depends:   aeson >= 0.11 && < 2
