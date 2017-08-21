@@ -49,6 +49,8 @@ library
                        JavaScript.Web.WebSocket
                        JavaScript.Web.Blob
                        JavaScript.Web.Blob.Internal
+                       JavaScript.Web.ErrorEvent
+                       JavaScript.Web.ErrorEvent.Internal
                        JavaScript.Web.CloseEvent
                        JavaScript.Web.CloseEvent.Internal
                        JavaScript.Web.Location
