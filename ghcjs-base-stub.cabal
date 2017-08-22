@@ -40,9 +40,22 @@ library
                        GHCJS.Types
                        JavaScript.Array
                        JavaScript.Array.Internal
+                       JavaScript.TypedArray.ArrayBuffer
+                       JavaScript.TypedArray.ArrayBuffer.Internal
                        JavaScript.Cast
                        JavaScript.Object
                        JavaScript.Object.Internal
+                       JavaScript.Web.Storage
+                       JavaScript.Web.WebSocket
+                       JavaScript.Web.Blob
+                       JavaScript.Web.Blob.Internal
+                       JavaScript.Web.ErrorEvent
+                       JavaScript.Web.ErrorEvent.Internal
+                       JavaScript.Web.CloseEvent
+                       JavaScript.Web.CloseEvent.Internal
+                       JavaScript.Web.Location
+                       JavaScript.Web.MessageEvent
+                       JavaScript.Web.MessageEvent.Internal
       build-depends:   aeson >= 0.11 && < 2
                      , attoparsec >= 0.13 && < 1
                      , deepseq >= 1.4 && < 2
