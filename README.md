@@ -12,3 +12,15 @@ Add the following to GHCJS project's cabal.
   if !impl(ghcjs)
     build-depends: ghcjs-base-stub
 ```
+
+# Changelog
+
+* 0.1.0.0
+  - Initial version with a subset of ghcjs base
+
+* 0.1.0.2
+  - Added JavaScript.Cast
+  - Added Marshall and Callbacks
+
+* 0.1.0.3
+  - Added Javascript.Web.Storage 
