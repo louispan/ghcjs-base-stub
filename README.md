@@ -23,4 +23,4 @@ Add the following to GHCJS project's cabal.
   - Added Marshall and Callbacks
 
 * 0.1.0.3
-  - Added Javascript.Web.Storage 
+  - Added Javascript.Web.Storage
