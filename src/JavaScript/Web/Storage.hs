@@ -33,8 +33,8 @@ getIndex :: Int -> Storage -> IO (Maybe JSString)
 getIndex i (Storage s) = do
     m <- readIORef s
     if i >= 0 && i < M.size m
-        then Just $ M.elemAt i m
-        else Nothing
+        then pure $ Just $ fst $ M.elemAt i m
+        else pure Nothing
 
 getItem :: JSString -> Storage -> IO (Maybe JSString)
 getItem key (Storage s) = M.lookup key <$> readIORef s
