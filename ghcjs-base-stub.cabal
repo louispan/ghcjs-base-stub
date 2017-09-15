@@ -44,6 +44,7 @@ library
                        JavaScript.Cast
                        JavaScript.Object
                        JavaScript.Object.Internal
+                       JavaScript.Web.Location
                        JavaScript.Web.Storage
       build-depends:   aeson >= 0.11 && < 2
                      , attoparsec >= 0.13 && < 1
