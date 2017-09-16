@@ -107,10 +107,10 @@ getOrigin :: Location -> IO JSString
 getOrigin (Location l) = (M.! "origin") <$> readIORef l
 
 assign :: JSString -> Location -> IO ()
-assign _ _ = error "JavaScript.Web.Location.assign"
+assign _ _ = pure ()
 
 reload :: Bool -> Location -> IO ()
-reload _ _ = error "JavaScript.Web.Location.reload"
+reload _ _ = pure ()
 
 replace :: JSString -> Location -> IO ()
-replace _ _ = error "JavaScript.Web.Location.replace"
+replace _ _ = pure ()
