@@ -16,15 +16,18 @@ Add the following to GHCJS project's cabal.
 
 # Changelog
 
-* 0.1.0.0
-  - Initial version with a subset of ghcjs base
+* 0.2.0.0
+  - Added Semigroup instance to JSString for ghc 8.4.1 and base 4.11.0
+
+* 0.1.0.4
+  - Added Javascript.Web.Location
+
+* 0.1.0.3
+  - Added Javascript.Web.Storage
 
 * 0.1.0.2
   - Added JavaScript.Cast
   - Added Marshall and Callbacks
 
-* 0.1.0.3
-  - Added Javascript.Web.Storage
-
-* 0.1.0.4
-  - Added Javascript.Web.Location
+* 0.1.0.0
+  - Initial version with a subset of ghcjs base
