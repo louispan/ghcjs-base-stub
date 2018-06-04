@@ -123,12 +123,10 @@ module Data.JSString
 
 import qualified Data.Text as T
 
-import           Data.JSString.Internal.Type
-import           GHC.Exts as Exts
+import Data.JSString.Internal.Type
+import GHC.Exts as Exts
 
-import Prelude
-       (Maybe, Bool, String, Ordering, (.),
-        ($),fmap, (<$>))
+import Prelude (Bool, Maybe, Ordering, String, fmap, ($), (.), (<$>))
 
 -- | /O(1)/ The empty 'JSString'.
 empty :: JSString
@@ -966,7 +964,7 @@ count (JSString pat) (JSString src) = T.count pat src
 -- excess elements of the longer 'JSString' are discarded. This is
 -- equivalent to a pair of 'unpack' operations.
 zip :: JSString -> JSString -> [(Char,Char)]
-zip (JSString a) (JSString b) = T.zip a b 
+zip (JSString a) (JSString b) = T.zip a b
 {-# INLINE [0] zip #-}
 
 -- | /O(n)/ 'zipWith' generalises 'zip' by zipping with the function
