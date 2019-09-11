@@ -48,7 +48,7 @@ library
                        JavaScript.Web.Storage
       build-depends:   aeson >= 0.11
                      , attoparsec >= 0.13
-                     , containers ==0.5.*
+                     , containers
                      , deepseq >= 1.4
                      , ghc-prim
                      , primitive >= 0.6
