@@ -11,8 +11,11 @@ import qualified Data.Text as T
 import GHC.Exts as Exts
 import GHCJS.Internal.Types
 import GHCJS.Prim
+#if MIN_VERSION_base(4,9,0) && !MIN_VERSION_base(4,11,0)
+import Data.Semigroup
+#endif
 
-#if MIN_VERSION_base(4,11,0)
+#if MIN_VERSION_base(4,9,0)
 newtype JSString = JSString T.Text
     deriving (Exts.IsString, Monoid, Semigroup, Eq, Ord, Data, Show, Read)
 #else

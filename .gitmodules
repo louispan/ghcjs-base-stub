@@ -1,0 +1,3 @@
+[submodule "ghcjs-base"]
+	path = ghcjs-base
+	url = https://github.com/louispan/ghcjs-base.git

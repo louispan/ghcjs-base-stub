@@ -1,0 +1,4 @@
+packages: .
+
+-- blank optioal-packages to override default, so it wont pickup ghcjs-base git submodule
+optional-packages:
