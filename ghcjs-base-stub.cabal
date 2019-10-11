@@ -11,6 +11,7 @@ maintainer:         louis@pan.me
 copyright:          2019 Louis Pan
 category:           Web
 build-type:         Simple
+tested-with:        GHC == 8.6.5
 extra-source-files: README.md
                     ghcjs-base/LICENSE
                     ghcjs-base/README.md
