@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               ghcjs-base-stub
-version:            0.3.0.0
+version:            0.3.0.1
 synopsis:           Allow GHCJS projects to compile under GHC and develop using intero.
 description:        Allow GHCJS projects to compile under GHC and develop using intero. Please refer to README.md.
 homepage:           https://github.com/louispan/javascript-stub#readme
@@ -13,6 +13,7 @@ category:           Web
 build-type:         Simple
 tested-with:        GHC == 8.6.5
 extra-source-files: README.md
+                    changelog.md
                     ghcjs-base/LICENSE
                     ghcjs-base/README.md
                     src/**/*.hs
