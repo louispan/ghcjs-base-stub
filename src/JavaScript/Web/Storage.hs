@@ -10,40 +10,41 @@ module JavaScript.Web.Storage
     , clear
     ) where
 
-import Data.Map.Strict (Map)
-import qualified Data.Map.Strict as M
-import Data.IORef (IORef, modifyIORef, newIORef, readIORef, writeIORef)
-import Data.JSString
-import System.IO.Unsafe (unsafePerformIO)
+import GHCJS.Types
 
-newtype Storage = Storage (IORef (Map JSString JSString))
+import Data.JSString
+import Data.JSString.Internal.Type
+
+import JavaScript.Web.Storage.Internal
 
 localStorage :: Storage
-localStorage = Storage . unsafePerformIO $ newIORef mempty
-{-# NOINLINE localStorage #-}
+localStorage = Storage nullRef
+{-# INLINE localStorage #-}
 
 sessionStorage :: Storage
-sessionStorage = Storage . unsafePerformIO $ newIORef mempty
-{-# NOINLINE sessionStorage #-}
+sessionStorage = Storage nullRef
+{-# INLINE sessionStorage #-}
 
 getLength :: Storage -> IO Int
-getLength (Storage s) = M.size <$> readIORef s
+getLength _ = pure 0
+{-# INLINE getLength #-}
 
 getIndex :: Int -> Storage -> IO (Maybe JSString)
-getIndex i (Storage s) = do
-    m <- readIORef s
-    if i >= 0 && i < M.size m
-        then pure $ Just $ fst $ M.elemAt i m
-        else pure Nothing
+getIndex _ _ = pure Nothing
+{-# INLINE getIndex #-}
 
 getItem :: JSString -> Storage -> IO (Maybe JSString)
-getItem key (Storage s) = M.lookup key <$> readIORef s
+getItem _ _ = pure Nothing
+{-# INLINE getItem #-}
 
 setItem :: JSString -> JSString -> Storage -> IO ()
-setItem key val (Storage s) = modifyIORef s $ M.insert key val
+setItem _ _ _ = pure ()
+{-# INLINE setItem #-}
 
 removeItem :: JSString -> Storage -> IO ()
-removeItem key (Storage s) = modifyIORef s $ M.delete key
+removeItem _ _ = pure ()
+{-# INLINE removeItem #-}
 
 clear :: Storage -> IO ()
-clear (Storage s) = writeIORef s mempty
+clear _ = pure ()
+{-# INLINE clear #-}

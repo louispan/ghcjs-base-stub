@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               ghcjs-base-stub
-version:            0.3.0.1
+version:            0.3.0.2
 synopsis:           Allow GHCJS projects to compile under GHC and develop using intero.
 description:        Allow GHCJS projects to compile under GHC and develop using intero. Please refer to README.md.
 homepage:           https://github.com/louispan/javascript-stub#readme
@@ -29,6 +29,16 @@ library
 
   if impl(ghcjs)
     other-extensions: JavaScriptFFI
+    js-sources:      ghcjs-base/jsbits/array.js
+                     ghcjs-base/jsbits/animationFrame.js
+                     ghcjs-base/jsbits/export.js
+                     ghcjs-base/jsbits/jsstring.js
+                     ghcjs-base/jsbits/jsstringRaw.js
+                     ghcjs-base/jsbits/foreign.js
+                     ghcjs-base/jsbits/text.js
+                     ghcjs-base/jsbits/utils.js
+                     ghcjs-base/jsbits/xhr.js
+                     ghcjs-base/jsbits/websocket.js
 
   other-modules:    GHCJS.Internal.Types
                     Data.JSString.Internal.Type
@@ -57,6 +67,7 @@ library
                     JavaScript.Object.Internal
                     JavaScript.Web.Location
                     JavaScript.Web.Storage
+                    JavaScript.Web.Storage.Internal
 
   if !impl(ghcjs)
     exposed-modules: GHCJS.Prim
