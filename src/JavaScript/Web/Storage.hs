@@ -11,10 +11,6 @@ module JavaScript.Web.Storage
     ) where
 
 import GHCJS.Types
-
-import Data.JSString
-import Data.JSString.Internal.Type
-
 import JavaScript.Web.Storage.Internal
 
 localStorage :: Storage
