@@ -13,7 +13,7 @@ category:           Web
 build-type:         Simple
 tested-with:        GHC == 8.6.5
 extra-source-files: README.md
-                    changelog.md
+                    CHANGELOG.md
                     ghcjs-base/LICENSE
                     ghcjs-base/README.md
                     src/**/*.hs
