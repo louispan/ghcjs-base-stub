@@ -4,15 +4,8 @@
 }:
 let
 
-  # Complete package set with overlays applied
-  pkgs = import
-    (builtins.fetchTarball {
-      url = "https://github.com/NixOS/nixpkgs/archive/${chan}.tar.gz";
-    }) {
-    overlays = [];
-  };
+  pkgs = import (builtins.fetchTarball { url = "https://github.com/NixOS/nixpkgs/archive/${chan}.tar.gz"; }) {};
 
-  # We can name him George
   ghcjs-base-stub = pkgs.haskell.packages.${compiler}.callCabal2nix "ghcjs-base-stub" ./. {};
 
 
