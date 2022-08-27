@@ -286,8 +286,8 @@ toJSVal_aeson x = cv (AE.toJSON x)
     convertValue (AE.Bool b)   = return (toJSBool b)
     convertValue (AE.Object o) = do
       obj@(OI.Object obj') <- OI.create
-#if MIN_VERSION_aeson(2,0,0)
       let fromKey =
+#if MIN_VERSION_aeson(2,0,0)
             AEK.toText
 #else
             id
