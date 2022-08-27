@@ -26,7 +26,12 @@ import           Control.Monad
 import           Control.Monad.Trans.Maybe (MaybeT(..), runMaybeT)
 
 import qualified Data.Aeson as AE
+#if MIN_VERSION_aeson(2,0,0)
+import qualified Data.Aeson.Key as AEK
+import qualified Data.Aeson.KeyMap as H
+#else
 import qualified Data.HashMap.Strict as H
+#endif
 import           Data.Int (Int8, Int16, Int32)
 import qualified Data.JSString.Text as JSS
 import           Data.Scientific (Scientific, scientific, fromFloatDigits)
@@ -151,9 +156,15 @@ instance FromJSVal AE.Value where
             JSONObject  -> do
                 props <- OI.listProps (OI.Object r)
                 runMaybeT $ do
+                    let toKey =
+#if MIN_VERSION_aeson(2,0,0)
+                          AEK.fromText
+#else
+                          id
+#endif
                     propVals <- forM props $ \p -> do
                         v <- MaybeT (fromJSVal =<< OI.getProp p (OI.Object r))
-                        return (JSS.textFromJSString p, v)
+                        return (toKey $ JSS.textFromJSString p, v)
                     return (AE.Object (H.fromList propVals))
     {-# INLINE fromJSVal #-}
 instance (FromJSVal a, FromJSVal b) => FromJSVal (a,b) where
@@ -275,5 +286,11 @@ toJSVal_aeson x = cv (AE.toJSON x)
     convertValue (AE.Bool b)   = return (toJSBool b)
     convertValue (AE.Object o) = do
       obj@(OI.Object obj') <- OI.create
-      mapM_ (\(k,v) -> convertValue v >>= \v' -> OI.setProp (JSS.textToJSString k) v' obj) (H.toList o)
+#if MIN_VERSION_aeson(2,0,0)
+      let fromKey =
+            AEK.toText
+#else
+            id
+#endif
+      mapM_ (\(k,v) -> convertValue v >>= \v' -> OI.setProp (JSS.textToJSString $ fromKey k) v' obj) (H.toList o)
       return obj'

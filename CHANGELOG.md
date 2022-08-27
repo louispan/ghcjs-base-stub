@@ -1,5 +1,8 @@
 # Changelog
 
+* Unreleased
+  - Add aeson 2 support
+
 * 0.3.0.0
   - Removed upper bounds from dependencies so the base library does not limit an application's choice of libraries.
   - Re-exports ghjs-base modules, so this package can replace ghcjs-base.
